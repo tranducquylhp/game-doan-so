@@ -18,10 +18,10 @@
             number = parseInt(number);
             let middleIndex = Math.floor((firstIndex + lastIndex)/2);
             if (arr[middleIndex] > number){
-                return timKiemNhiPhan(firstIndex,middleIndex,number);
+                return timKiemNhiPhan(firstIndex,middleIndex-1,number);
             }
             if (arr[middleIndex] < number){
-                return timKiemNhiPhan(middleIndex,lastIndex,number);
+                return timKiemNhiPhan(middleIndex+1,lastIndex,number);
             }
             if (arr[middleIndex] === number){
                 return middleIndex;
@@ -34,7 +34,7 @@
         document.writeln("<br>");
 
         let firstMilliseconds1 = new Date().getTime();
-        document.write(timKiemTuyenTinh(-9)+" ");
+        document.write(timKiemTuyenTinh(8)+" ");
         let lastMilliseconds1 = new  Date().getTime();
         document.write(lastMilliseconds1 - firstMilliseconds1);
         document.write("<br>");
